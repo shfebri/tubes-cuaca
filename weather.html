@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/97cc7f82b3.js" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			img {
+ 			 display: block;
+ 			 margin-left: auto;
+  			margin-right: auto;
+			}
+		</style>
+		<title>Weather Forecast</title>
+	</head>
+	<body onload="change(1)">
+		<div class="container-fluid border">
+			<div class="column">
+				<h1>PRAKIRAAN CUACA</h1>
+				<img src = "icon.png" class="center" style="width: 250px;">
+				<style>h1 {
+					text-align: center;
+					color: #0099ff;
+				}
+				</style>
+			</div>
+			<div class="row">
+				<h1>Bandung</h1>
+			</div>
+			<div class="row">
+				<ul class="nav" id="dates">
+          <li class="nav-item">
+                <a class="nav-link active" href="javascript:change(1);">30/11</a>
+              </li>
+          <li class="nav-item">
+                <a class="nav-link active" href="javascript:change(2);">01/12</a>
+              </li>
+          <li class="nav-item">
+                <a class="nav-link active" href="javascript:change(3);">02/12</a>
+              </li>
+				</ul>
+			</div>
+			<div id="parent">
+        <div class="row" id="page1">
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>00:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud-sun"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>85%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>24°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>9.26km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>Southwest</h5>
+                </div>
+              </div>
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>06:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud-rain"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>65%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>27°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>18.52km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>Southwest</h5>
+                </div>
+              </div>
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>12:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud-rain"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>90%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>20°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>9.26km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>East</h5>
+                </div>
+              </div>
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>18:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>90%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>20°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>9.26km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>North-Northeast</h5>
+                </div>
+              </div>
+        </div>
+        <div class="row" id="page2">
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>00:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud-sun"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>90%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>24°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>9.26km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>Northwest</h5>
+                </div>
+              </div>
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>06:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud-showers-heavy"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>65%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>26°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>18.52km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>Northwest</h5>
+                </div>
+              </div>
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>12:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud-rain"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>90%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>21°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>9.26km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>North-Northeast</h5>
+                </div>
+              </div>
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>18:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>90%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>22°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>9.26km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>North-Northeast</h5>
+                </div>
+              </div>
+        </div>
+        <div class="row" id="page3">
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>00:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud-sun"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>85%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>21°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>3.7km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>East-Northeast</h5>
+                </div>
+              </div>
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>06:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud-rain"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>60%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>30°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>9.26km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>West</h5>
+                </div>
+              </div>
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>12:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud-showers-heavy"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>85%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>20°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>0.0km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>Unrecognized wind direction</h5>
+                </div>
+              </div>
+          <div class="col-3 border">
+                <div class="row justify-content-center">
+                  <h3>18:00</h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3><i class="fas fa-cloud-sun"></i></h3>
+                </div>
+                <div style="margin-top: 20px;" class="row justify-content-center">
+                  <h3>95%</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <h3>18°C</h3>
+                </div>
+                <div class="row justify-content-center">
+                  <i class="fas fa-wind"></i>
+                  <h4>0.0km/h</h4>
+                </div>
+                <div class="row justify-content-center">
+                  <h5>Unrecognized wind direction</h5>
+                </div>
+              </div>
+        </div>
+			</div>
+		</div>
+		
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,181.3C672,171,768,181,864,208C960,235,1056,277,1152,272C1248,267,1344,213,1392,186.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+		<footer class="py-4 bg-light mt-auto">
+			<div class="container-fluid px-4">
+				<div class="d-flex align-items-center justify-content-between small">
+					<div class="text-muted">Shafira Febriani - 23220067</div>
+					<div class="text-muted">Data diperoleh dari &copy; BMKG 2021</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+<script>
+	function change(x){
+	  var children = document.getElementById('parent').children;
+	  for(var i = 0; i < children.length; i++){
+	    var child = children[i];
+	    if (child.id == "page" + x) {
+	      child.style.display = '';
+	    }
+	    else {
+	      child.style.display = 'none';
+	    }
+	  }
+	}
+</script>
